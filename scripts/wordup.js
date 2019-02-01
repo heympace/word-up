@@ -79,14 +79,19 @@ function checkIfWordIsReal(word) {
             console.log("We received a response from Pearson!");
 
             // let's print the response to the console so we can take a looksie
-            console.log(response);
+            console.log(response.results.length);
 
             // TODO 14
             // Replace the 'true' below.
             // If the response contains any results, then the word is legitimate.
             // Otherwise, it is not.
-            var theAnswer = true;
+            if ( response.results.length > 0 ) {
+                var theAnswer = true;
+            } else {
+                var theAnswer = false;
+            };
 
+            console.log("The answer is a word: " + theAnswer);
             // TODO 15
             // Update the corresponding wordSubmission in the model
 

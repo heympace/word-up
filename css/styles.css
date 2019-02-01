@@ -40,6 +40,14 @@ main {
     margin-left: 0.4em;
 }
 
+.word-pass {
+    background-color: turquoise;
+}
+
+.word-fail {
+    background-color: orangered;
+}
+
 .word-submission {
     font-size: 30px;
     color: orange;

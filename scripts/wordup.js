@@ -227,14 +227,17 @@ function wordSubmissionChip(wordSubmission) {
         // TODO 17
         // give the scoreChip appropriate text content
         if (wordSubmission.isRealWord === true) {
-            var scoreChip = $("<span></span>").text(wordScore(wordSubmission.word));
+            var scoreChip = $("<span></span>")
+                .text(wordScore(wordSubmission.word))
+                .attr("class", "tag tag-sm word-pass");
         } else {
-            var scoreChip = $("<span></span>").text("X");
+            var scoreChip = $("<span></span>")
+                .text("X")
+                .attr("class", "tag tag-sm word-fail");
         }
         
-        // TODO 18
-        // give the scoreChip appropriate css classes
-        // fix this ... scoreChip.attr("class", "tag tag-lg");
+        // TODO 18 - condensing with status ^
+        // give the scoreChip appropriate css classes 
 
         // TODO 16
         // append scoreChip into wordChip

@@ -223,16 +223,22 @@ function wordSubmissionChip(wordSubmission) {
 
     // if we know the status of this word (real word or not), then add a green score or red X
     if (wordSubmission.hasOwnProperty("isRealWord")) {
-        var scoreChip = $("<span></span>").text("⟐");
+        // var scoreChip = $("<span></span>").text("⟐");
         // TODO 17
         // give the scoreChip appropriate text content
-
+        if (wordSubmission.isRealWord === true) {
+            var scoreChip = $("<span></span>").text(wordScore(wordSubmission.word));
+        } else {
+            var scoreChip = $("<span></span>").text("X");
+        }
+        
         // TODO 18
         // give the scoreChip appropriate css classes
+        // fix this ... scoreChip.attr("class", "tag tag-lg");
 
         // TODO 16
         // append scoreChip into wordChip
-
+        wordChip.append(scoreChip);
     }
 
     return wordChip;

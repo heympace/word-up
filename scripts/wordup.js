@@ -91,10 +91,20 @@ function checkIfWordIsReal(word) {
                 var theAnswer = false;
             };
 
-            console.log("The answer is a word: " + theAnswer);
+            // test the above:
+            // console.log("The answer is a word: " + theAnswer);
+            
             // TODO 15
             // Update the corresponding wordSubmission in the model
+            // thought process .... 
+            // for each object in model.wordsubmissions, if theItem.word is equal to .word,
+            // add item.isRealWord property = theAnswer (true/false) to that object
 
+            model.wordSubmissions.forEach(function (arrayItem) {
+                if (word === arrayItem.word) {
+                    arrayItem.isRealWord = theAnswer;
+                }
+            });
 
             // re-render
             render();

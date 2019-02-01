@@ -54,6 +54,13 @@ function addNewWordSubmission(word) {
     // TODO 21
     // replace the hardcoded 'false' with the real answer
     var alreadyUsed = false;
+    model.wordSubmissions.map(function (listWord) {
+        if (word === listWord.word) {
+            alreadyUsed = true;
+        } else {
+            alreadyUsed = false;
+        }
+    });
 
     // if the word is valid and hasn't already been used, add it
     if (containsOnlyAllowedLetters(word) && alreadyUsed == false) {

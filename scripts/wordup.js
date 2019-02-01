@@ -365,7 +365,9 @@ function wordScore(word) {
     // TODO 19
     // Replace the empty list below.
     // Map the list of letters into a list of scores, one for each letter.
-    var letterScores = [];
+    var letterScores = letters.map( letter => {
+        return letterScore(letter);
+    });
 
     // return the total sum of the letter scores
     return letterScores.reduce(add, 0);
